@@ -37,10 +37,6 @@ html{
     padding-bottom: 10em;
 }
 
-#porta_text{
-    padding: 2em;
-}
-
 #logo{
     width: 19em;
 }
@@ -70,6 +66,8 @@ html{
     border: 2px solid rgb(197, 197, 197);
     border-radius: 14px;
     height:100%;
+    width: 30em;
+    padding: 2em;
 }
 
 /* Parte 2 */
