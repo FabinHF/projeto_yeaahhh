@@ -17,6 +17,6 @@ function tutorial(){
 
 let bulbassauro = ["b","u","l","b","a","s","s","a","u","r"];
 let charmander = ["c","h","a","r","m","a","n","d","e","r"];
-let squirtle = ["s","q","u","i","r","t","l","e","s",""];
+let squirtle = ["s","q","u","i","r","t","l","e","s","s"];
 
 let caminho = [];
