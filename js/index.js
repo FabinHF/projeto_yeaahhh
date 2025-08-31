@@ -20,3 +20,4 @@ let charmander = ["c","h","a","r","m","a","n","d","e","r"];
 let squirtle = ["s","q","u","i","r","t","l","e","s","s"];
 
 let caminho = [];
+aaaaaaaaaaaaaaaaaa
