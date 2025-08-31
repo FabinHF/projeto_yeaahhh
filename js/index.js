@@ -1,6 +1,5 @@
 function tutorial(){
     document.getElementById("texto").innerHTML = (`
-
         PokeTower é uma fangame da franquia Pokémon com toques e elementos da franquia de Mortal Kombat.<br><br>
         O objetivo do jogo é você conseguir levar o seu pokémon inicial até o topo da torre superando seus desafios.<br><br>
 
@@ -10,15 +9,15 @@ function tutorial(){
         Suba na torre e conquiste cada andar!<br>
         Siga sem medo pelo caminho do mestre pokémon!<br><br>
         
-        O jogo conta com mecânicas de evolução e combate por turnos como;<br>
-        - Ataque (Você dá um dano básico em seu oponente)<br>
-        - Defesa (Você reduz o dano do próximo ataque do oponente)<br>
-        - Carregar (Você aumenta o dano do seu próximo ataque, você pode acumular até 3 cargas mas lembre-se que você ficará vulnerável!!)<br><br>
+        O jogo conta com mecânicas de evolução e combate por turnos como;<br><br>
+        - <span style="color:tomato;">Ataque</span> (Você dá um dano básico em seu oponente)<br><br>
+        - <span style="color:cyan;">Defesa</span> (Você reduz o dano do próximo ataque do oponente)<br><br>
+        - <span style="color:lightgreen;">Carregar</span> (Você aumenta o dano do seu próximo ataque, você pode acumular até 3 cargas mas lembre-se que você ficará vulnerável!!)<br><br>
         
-        Há também um caminho pré-definido de inimigos dependendo do pokémon inicial escolhido. Seu inicial enfrentará seus adversários sozinhos<br>
+        Há também um caminho pré-definido de inimigos dependendo do pokémon inicial escolhido. Seu inicial enfrentará seus adversários sozinhos 
         mas ele tem um enorme potencial de crescimento e evolução.<br>
         Não se esqueça também de que o próximo pokémon de cada andar sempre será mais forte!!<br>
-        Ao chegar no final da torre, você se deparará com o PODEROSO !@#$%! o Chefe FINAL da torre!! Boa sorte.<br>
+        Ao chegar no final da torre, você se deparará com o PODEROSO <span style="background-color: black; color:white;">!@#$%!</span> o Chefe FINAL da torre!! Boa sorte.<br>
     
     `);
 };
