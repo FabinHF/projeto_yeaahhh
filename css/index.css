@@ -67,9 +67,10 @@ html{
     background-color: rgba(53, 53, 53, 0.541);
     border: 2px solid rgb(197, 197, 197);
     border-radius: 14px;
-    height: 30em;
-    width: 30em;
+    height: 35em;
+    width: 25em;
     padding: 2em;
+    overflow: auto;
 }
 
 /* Parte 2 */
