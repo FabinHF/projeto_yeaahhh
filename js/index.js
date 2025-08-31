@@ -1,3 +1,7 @@
+function tutorial(){
+    document.getElementById("texto").innerHTML = "ttexto";
+};
+
 function escolher(botao){
     if(botao.id == "bulb"){
         caminho = bulbassauro;
@@ -7,16 +11,17 @@ function escolher(botao){
         caminho = squirtle
     };
 
+    for(let i=0; i<4; i++){
+        document.getElementById(i).innerHTML = ""
+    }
+    montarTorre()
 };
 
-function tutorial(){
-    document.getElementById("texto").innerHTML = "ttexto";
-};
 
 //=================================================================================//
 
-let bulbassauro = ["b","u","l","b","a","s","s","a","u","r"];
-let charmander = ["c","h","a","r","m","a","n","d","e","r"];
-let squirtle = ["s","q","u","i","r","t","l","e","s","s"];
+let bulbassauro = ["../img/pokemon/bulbassauro/1","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon"];
+let charmander = ["../img/pokemon/charmander/1","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander"];
+let squirtle = ["../img/pokemon/squirtle/1","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle"];
 
 let caminho = [];
