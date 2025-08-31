@@ -1,0 +1,108 @@
+/* Geral */
+html{
+    background-image: url(../img/coisas/uaupeiper.png);
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-position: fixed;
+}
+.malhaH4{
+    display: grid;
+    grid-template-columns:auto auto auto auto;
+}
+
+/* Escolha Pokémon */
+
+#escolha{
+    text-align: center;
+}
+
+#vai{
+    text-align: center;
+    margin-top: 15%;
+}
+
+.malhaH3{
+    display: grid;
+    grid-template-columns:auto auto auto;
+}
+
+/* Parte 1 */
+
+.malhaV2{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    row-gap: 3em;
+    color: white;
+    padding-bottom: 10em;
+}
+
+#porta_text{
+    padding: 2em;
+}
+
+#logo{
+    width: 19em;
+}
+
+.tutos{
+    margin-left: 4em;
+}
+
+.butao{
+    background-color: rgb(157, 82, 226);
+    border: 2px solid black;
+    border-radius: 14px;
+    transition: 0.4s;
+}
+
+.butao:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.icone{
+    width: 4em;
+}
+
+#porta_text{
+    background-color: rgba(53, 53, 53, 0.541);
+    border: 2px solid rgb(197, 197, 197);
+    border-radius: 14px;
+    height:100%;
+}
+
+/* Parte 2 */
+
+.malhaV3{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 5em;
+}
+
+#vs{
+    padding-top: 3em;
+    width: 15em;
+}
+
+#batalha{
+    text-align: center;
+}
+
+.ibage{
+    width: 17em;
+}
+
+/* Parte 3 */
+
+.tipo{
+    width: 1.5em;
+    vertical-align: middle;
+}
+
+.infos{
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 14px;
+    margin-right: 9em;
+    padding-left: 2em;
+}
