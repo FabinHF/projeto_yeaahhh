@@ -1,30 +1,64 @@
 function tutorial(){
-    document.getElementById("texto").innerHTML = "ttexto";
+    document.getElementById("texto").innerHTML = (`
+        PokeTower é uma fangame da franquia Pokémon com toques e elementos da franquia de Mortal Kombat.<br><br>
+        O objetivo do jogo é você conseguir levar o seu pokémon inicial até o topo da torre superando seus desafios.<br><br>
+
+        
+        Você se vê diante de um grande desafio<br>
+        Você é movido por fome de luta e poder.<br>
+        Suba na torre e conquiste cada andar!<br>
+        Siga sem medo pelo caminho do mestre pokémon!<br><br>
+        
+
+        O jogo conta com mecânicas de evolução e combate por turnos como;<br><br>
+        - <span style="color:tomato;">Ataque</span> (Você dá um dano básico em seu oponente)<br><br>
+        - <span style="color:cyan;">Defesa</span> (Você reduz o dano do próximo ataque do oponente)<br><br>
+        - <span style="color:lightgreen;">Carregar</span> (Você aumenta o dano do seu próximo ataque, você pode acumular até 3 cargas mas lembre-se que você ficará vulnerável!!)<br><br>
+        
+        Há também um caminho pré-definido de inimigos dependendo do pokémon inicial escolhido. Seu inicial enfrentará seus adversários sozinhos 
+        mas ele tem um enorme potencial de crescimento e evolução.<br>
+        Não se esqueça também de que o próximo pokémon de cada andar sempre será mais forte!!<br>
+        Ao chegar no final da torre, você se deparará com o PODEROSO <span style="background-color: black; color:white;">!@#$%!</span> o Chefe FINAL da torre!! Boa sorte.<br>`);
 };
 
 function escolher(botao){
     if(botao.id == "bulb"){
         caminho = bulbassauro;
     }else if(botao.id == "char"){
-        caminho = charmander
+        caminho = charmander;
     }else{
-        caminho = squirtle
+        caminho = squirtle;
     };
 
     for(let i=0; i<4; i++){
-        document.getElementById(i).innerHTML = ""
-    }
-    montarTorre()
+        document.getElementById(i).innerHTML = "";
+    };
+    montarCampo();
+};
+
+function montarCampo(){
+    
 };
 
 
 //=================================================================================//
 
-let bulbassauro = ["../img/pokemon/bulbassauro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon"];
-let charmander = ["../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander"];
-let squirtle = ["../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle"];
-
 let caminho = [];
+
+// Caminho imagem //
+
+const bulbassauro = ['<img class="ibage" src="../img/pokemon/bulbassauro>/1"','<img class="ibage" src="../img/pokemon/bulbasasuro>/2"','<img class="ibage" src="../img/pokemon/bulbasasuro>/3"','<img class="ibage" src="../img/pokemon/bulbasasuro>/4"','<img class="ibage" src="../img/pokemon/bulbasasuro>/5"','<img class="ibage" src="../img/pokemon/bulbasasuro>/6"','<img class="ibage" src="../img/pokemon/bulbasasuro>/7"','<img class="ibage" src="../img/pokemon/bulbasasuro>/8"','<img class="ibage" src="../img/pokemon/bulbasasuro>/9"'];
+const charmander = ['<img class="ibage" src="../img/pokemon/charmander/>1"','<img class="ibage" src="../img/pokemon/charmander/>2"','<img class="ibage" src="../img/pokemon/charmander/>3"','<img class="ibage" src="../img/pokemon/charmander/>4"','<img class="ibage" src="../img/pokemon/charmander/>5"','<img class="ibage" src="../img/pokemon/charmander/>6"','<img class="ibage" src="../img/pokemon/charmander/>7"','<img class="ibage" src="../img/pokemon/charmander/>8"','<img class="ibage" src="../img/pokemon/charmander/>9"'];
+const squirtle = ['<img class="ibage" src="../img/pokemon/squirtle/1">','<img class="ibage" src="../img/pokemon/squirtle/2">','<img class="ibage" src="../img/pokemon/squirtle/3">','<img class="ibage" src="../img/pokemon/squirtle/4">','<img class="ibage" src="../img/pokemon/squirtle/5">','<img class="ibage" src="../img/pokemon/squirtle/6">','<img class="ibage" src="../img/pokemon/squirtle/7">','<img class="ibage" src="../img/pokemon/squirtle/8">','<img class="ibage" src="../img/pokemon/squirtle/9">'];
+
+// Caminho nome //
+
+const bulbassauro_caminho = [0,1,2,3,4,5,6,7,8];
+const charmander_caminho = [0,1,2,3,4,5,6,7,8];
+const Squirtle_caminho = [0,1,2,3,4,5,6,7,8];
+
+
+
 /* Linha evolutiva dos iniciais ---------------------------------------- /
 const evolucao_bulbassauro = ["Bulbasaur", "Ivysaur", "Venusaur"];
 const pkm_img_bulba_evolucao = ["001", "002", "003"];
