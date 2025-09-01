@@ -24,32 +24,83 @@ function tutorial(){
 function escolher(botao){
     if(botao.id == "bulb"){
         caminho = bulbassauro;
+        escolha = in_bulb;
+        nome_ali = "Bulbassauro"
+        nome_arq = "bulbassaur"
     }else if(botao.id == "char"){
         caminho = charmander;
+        escolha = in_char;
+        nome_ali = "Charmander"
+        nome_arq = "charmander"
     }else{
         caminho = squirtle;
+        escolha = in_squir;
+        nome_ali = "Squirtle"
+        nome_arq = "squritle"
     };
-
     for(let i=0; i<4; i++){
         document.getElementById(i).innerHTML = "";
     };
+
     montarCampo();
 };
 
 function montarCampo(){
-    
+    if(nivel >= 1 && nivel <=3 ){
+        document.getElementById("pkm_ali").innerHTML = escolha[0];
+    }else if(nivel >3 && nivel <= 6){
+        document.getElementById("pkm_ali").innerHTML = escolha[1];
+    }else{
+        document.getElementById("pkm_ali").innerHTML = escolha[2];
+    };
+
+    document.getElementById(0).innerHTML = "<h1>Próximos Inimigos</h1>";
+
+    for(let i=1; i<10; i++){
+        document.getElementById(i).innerHTML = caminho[i-1];
+    };
+
+    batalha();
 };
 
+function batalha(){
+    let text = '<img class="ibage" src="../img/pokemon/' + nome_arq +'/' + nivel +'.png">'
+    console.log(text)
+    document.getElementById("pkm_adv").innerHTML = text
+};
 
 //=================================================================================//
-
+let status = [];
 let caminho = [];
+let escolha = [];
 
 // Caminho imagem //
 
-const bulbassauro = ['<img class="ibage" src="../img/pokemon/bulbassauro>/1"','<img class="ibage" src="../img/pokemon/bulbasasuro>/2"','<img class="ibage" src="../img/pokemon/bulbasasuro>/3"','<img class="ibage" src="../img/pokemon/bulbasasuro>/4"','<img class="ibage" src="../img/pokemon/bulbasasuro>/5"','<img class="ibage" src="../img/pokemon/bulbasasuro>/6"','<img class="ibage" src="../img/pokemon/bulbasasuro>/7"','<img class="ibage" src="../img/pokemon/bulbasasuro>/8"','<img class="ibage" src="../img/pokemon/bulbasasuro>/9"'];
-const charmander = ['<img class="ibage" src="../img/pokemon/charmander/>1"','<img class="ibage" src="../img/pokemon/charmander/>2"','<img class="ibage" src="../img/pokemon/charmander/>3"','<img class="ibage" src="../img/pokemon/charmander/>4"','<img class="ibage" src="../img/pokemon/charmander/>5"','<img class="ibage" src="../img/pokemon/charmander/>6"','<img class="ibage" src="../img/pokemon/charmander/>7"','<img class="ibage" src="../img/pokemon/charmander/>8"','<img class="ibage" src="../img/pokemon/charmander/>9"'];
-const squirtle = ['<img class="ibage" src="../img/pokemon/squirtle/1">','<img class="ibage" src="../img/pokemon/squirtle/2">','<img class="ibage" src="../img/pokemon/squirtle/3">','<img class="ibage" src="../img/pokemon/squirtle/4">','<img class="ibage" src="../img/pokemon/squirtle/5">','<img class="ibage" src="../img/pokemon/squirtle/6">','<img class="ibage" src="../img/pokemon/squirtle/7">','<img class="ibage" src="../img/pokemon/squirtle/8">','<img class="ibage" src="../img/pokemon/squirtle/9">'];
+const bulbassauro = ['<img class="ibageTorre" src="../img/pokemon/bulbassaur/1.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/2.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/3.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/4.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/5.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/6.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/7.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/8.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/9.png">'];
+const charmander = ['<img class="ibageTorre" src="../img/pokemon/charmander/1.png">','<img class="ibageTorre" src="../img/pokemon/charmander/2.png">','<img class="ibageTorre" src="../img/pokemon/charmander/3.png">','<img class="ibageTorre" src="../img/pokemon/charmander/4.png">','<img class="ibageTorre" src="../img/pokemon/charmander/5.png">','<img class="ibageTorre" src="../img/pokemon/charmander/6.png">','<img class="ibageTorre" src="../img/pokemon/charmander/7.png">','<img class="ibageTorre" src="../img/pokemon/charmander/8.png">','<img class="ibageTorre" src="../img/pokemon/charmander/9.png">'];
+const squirtle = ['<img class="ibageTorre" src="../img/pokemon/squritle/1.png">','<img class="ibageTorre" src="../img/pokemon/squritle/2.png">','<img class="ibageTorre" src="../img/pokemon/squritle/3.png">','<img class="ibageTorre" src="../img/pokemon/squritle/4.png">','<img class="ibageTorre" src="../img/pokemon/squritle/5.png">','<img class="ibageTorre" src="../img/pokemon/squritle/6.png">','<img class="ibageTorre" src="../img/pokemon/squritle/7.png">','<img class="ibageTorre" src="../img/pokemon/squritle/8.png">','<img class="ibageTorre" src="../img/pokemon/squritle/9.png">'];
+
+// Pokémon incial //
+
+const in_bulb = ['<img class="ibage" src="../img/pokemon/bulbassaur/bulbassauro.png">','<img class="ibage" src="../img/pokemon/bulbassaur/ivysauro.png">','<img class="ibage" src="../img/pokemon/bulbassaur/venussauro.png">'];
+const in_char = ['<img class="ibage" src="../img/pokemon/charmander/charmander.png">','<img class="ibage" src="../img/pokemon/charmander/charmeleon.png">','<img class="ibage" src="../img/pokemon/charmander/charizard.png">'];
+const in_squir = ['<img class="ibage" src="../img/pokemon/squritle/squirtle.png">','<img class="ibage" src="../img/pokemon/squritle/wartortle.png">','<img class="ibage" src="../img/pokemon/squritle/blastoise.png">'];
+
+// Status caminho //
+
+let nivelTorre = 0;
+let nome_ali = "";
+let hp = 0;
+let tipo = "";
+let fraqueza = "";
+let nivel = 1;
+
+
+let nome_arq
+let stt_bulb  = [];
+let stt_char  = [];
+let stt_squir  = [];
+
 
 // Caminho nome //
 

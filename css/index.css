@@ -1,6 +1,6 @@
 /* Geral */
 html{
-    background-image: url(../img/coisas/uaupeiper.png);
+    background: url(../img/coisas/uaupeiper.png) center center / cover no-repeat fixed;
     background-repeat: no-repeat;
     background-size:100%;
     background-position: fixed;
@@ -38,7 +38,7 @@ html{
 }
 
 #logo{
-    width: 4em
+    width: 20em
 }
 
 .tutos{
@@ -126,4 +126,11 @@ html{
     display: grid;
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
     text-align: center;
+}
+
+.ibageTorre{
+    width: 7em;
+    background-color: rgb(184, 184, 184);
+    border: 2px solid black;
+    border-radius: 4px;
 }
