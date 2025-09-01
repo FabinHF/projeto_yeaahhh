@@ -23,8 +23,8 @@ function escolher(botao){
 let bulbassauro = ["../img/pokemon/bulbassauro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon/bulbasasuro","../img/pokemon"];
 let charmander = ["../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander","../img/pokemon/charmander"];
 let squirtle = ["../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle","../img/pokemon/squirtle"];
-
 let caminho = [];
+
 /* Linha evolutiva dos iniciais ---------------------------------------- /
 const evolucao_bulbassauro = ["Bulbasaur", "Ivysaur", "Venusaur"];
 const pkm_img_bulba_evolucao = ["001", "002", "003"];
