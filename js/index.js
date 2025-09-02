@@ -70,11 +70,10 @@ function montarCampo(){
 };
 
 function batalha(){
-    let text = '<img class="ibage" src="../img/pokemon/' + nome_arq +'/' + nivel +'.png">'
-    console.log(text)
-    document.getElementById("pkm_adv").innerHTML = text
+    let text = '<img class="ibage" src="../img/pokemon/' + nome_arq +'/' + (nivelTorre +1) +'.png">';
+    document.getElementById("pkm_adv").innerHTML = text;
 
-    document.getElementById("nome_adv").innerHTML = caminho_nome[nivelTorre]
+    document.getElementById("nome_adv").innerHTML = caminho_nome[nivelTorre];
 };
 
 //=================================================================================//
@@ -88,7 +87,7 @@ let escolha_nome = [];
 
 // status predefinidos //
 
-let nome_arq
+let nome_arq;
 let stt_bulb  = [];
 let stt_char  = [];
 let stt_squir  = [];
