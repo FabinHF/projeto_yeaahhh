@@ -1,4 +1,4 @@
-function tutorial(){
+ function tutorial(){
     document.getElementById("texto").innerHTML = (`
         PokeTower é uma fangame da franquia Pokémon com toques e elementos da franquia de Mortal Kombat.<br><br>
         O objetivo do jogo é você conseguir levar o seu pokémon inicial até o topo da torre superando seus desafios.<br><br>
@@ -24,18 +24,24 @@ function tutorial(){
 function escolher(botao){
     if(botao.id == "bulb"){
         caminho = bulbassauro;
+        caminho_nome = caminho_bulbassauro;
         escolha = in_bulb;
-        nome_ali = "Bulbassauro"
+        escolha_nome = evolucao_bulbassauro;
+
         nome_arq = "bulbassaur"
     }else if(botao.id == "char"){
         caminho = charmander;
+        caminho_nome = caminho_charmander;
         escolha = in_char;
-        nome_ali = "Charmander"
+        escolha_nome = evolucao_charmander;
+
         nome_arq = "charmander"
     }else{
         caminho = squirtle;
+        caminho_nome = caminho_squirtle;
         escolha = in_squir;
-        nome_ali = "Squirtle"
+        escolha_nome = evolucao_squirtle
+
         nome_arq = "squritle"
     };
     for(let i=0; i<4; i++){
@@ -67,12 +73,35 @@ function batalha(){
     let text = '<img class="ibage" src="../img/pokemon/' + nome_arq +'/' + nivel +'.png">'
     console.log(text)
     document.getElementById("pkm_adv").innerHTML = text
+
+    document.getElementById("nome_adv").innerHTML = caminho_nome[nivelTorre]
 };
 
 //=================================================================================//
-let status = [];
+
+// Escolha e definição de caminho //
+
 let caminho = [];
+let caminho_nome = [];
 let escolha = [];
+let escolha_nome = [];
+
+// status predefinidos //
+
+let nome_arq
+let stt_bulb  = [];
+let stt_char  = [];
+let stt_squir  = [];
+
+// Status caminho //
+
+let status = [];
+let nome_ali = "";
+let nivel = 1;
+let hp = 0;
+let tipo = "";
+let fraqueza = "";
+let nivelTorre = 0;
 
 // Caminho imagem //
 
@@ -86,48 +115,20 @@ const in_bulb = ['<img class="ibage" src="../img/pokemon/bulbassaur/bulbassauro.
 const in_char = ['<img class="ibage" src="../img/pokemon/charmander/charmander.png">','<img class="ibage" src="../img/pokemon/charmander/charmeleon.png">','<img class="ibage" src="../img/pokemon/charmander/charizard.png">'];
 const in_squir = ['<img class="ibage" src="../img/pokemon/squritle/squirtle.png">','<img class="ibage" src="../img/pokemon/squritle/wartortle.png">','<img class="ibage" src="../img/pokemon/squritle/blastoise.png">'];
 
-// Status caminho //
-
-let nivelTorre = 0;
-let nome_ali = "";
-let hp = 0;
-let tipo = "";
-let fraqueza = "";
-let nivel = 1;
-
-
-let nome_arq
-let stt_bulb  = [];
-let stt_char  = [];
-let stt_squir  = [];
-
-
 // Caminho nome //
 
 const bulbassauro_caminho = [0,1,2,3,4,5,6,7,8];
 const charmander_caminho = [0,1,2,3,4,5,6,7,8];
 const Squirtle_caminho = [0,1,2,3,4,5,6,7,8];
 
+// Nomes pokémon //
 
-
-/* Linha evolutiva dos iniciais ---------------------------------------- /
 const evolucao_bulbassauro = ["Bulbasaur", "Ivysaur", "Venusaur"];
-const pkm_img_bulba_evolucao = ["001", "002", "003"];
-
 const evolucao_charmander = ["Charmander", "Charmeleon", "Charizard"];
-const pkm_img_charmander_evolucao = ["004", "005", "006"];
-
 const evolucao_squirtle = ["Squirtle", "Wartortle", "Blastoise"];
-const pkm_img_squirtle_evolucao = ["007", "008", "009"];
-/ Linha evolutiva dos iniciais ---------------------------------------- /
 
-/ Caminho de cada inicial ---------------------------------------- /
+// Nomes pokémon caminhos //
+
 const caminho_bulbassauro = ["Caterpie","Pidgey","Vulpix","Paras","Mankey","Growlithe","Magmar","Moltres","Mewtwo"];
-const pkm_img_bulbassauro = ["010", "016", "037", "046", "056", "058", "126", "146", "150"];
-/ ------------------------- /
 const caminho_charmander = ["Spearow","Sandshrew","Nidorina","Psyduck","Tentacruel","Golem","Lapras","Articuno","Mewtwo"];
-const pkm_img_charmander = ["021", "027", "030", "054", "073", "076", "131", "144", "150"];
-/ ------------------------- /
 const caminho_squirtle = ["Rattata","Ekans","Pikachu","Victreebel","Voltorb","Scyther","Electabuzz","Zapdos","Mewtwo"];
-const pkm_img_squirtle = ["019", "023", "025", "071", "100", "123", "125", "145", "150"];
-/ Caminho de cada inicial ---------------------------------------- */
