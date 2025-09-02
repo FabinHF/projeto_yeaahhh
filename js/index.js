@@ -106,9 +106,9 @@ let nivel = 1;
 
 
 let nome_arq
-let stt_bulb  = [];
-let stt_char  = [];
-let stt_squir  = [];
+let stt_bulb  = [[1,10],[3,45],[7,120]];
+let stt_char  = [[3,6],[7,30],[12,80]];
+let stt_squir  = [[2,8],[5,40],[10,100]];
 
 
 // Caminho nome //
