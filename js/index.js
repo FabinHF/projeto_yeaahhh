@@ -81,7 +81,7 @@ function batalha(){
 
 /*Função para calcular o dano do Pokémon com base no seu estágio evolutivo*/
 
-function atacar(){
+/*function atacar(){
 
     if (opcao.id == "atacar"){
         let dano = 0;
@@ -120,7 +120,7 @@ function atacar(){
         }
     }
   }
-}}
+}
 
 
     
@@ -170,7 +170,7 @@ function defender(){
     let defesa = 0;
 }
 
-
+*/
 
 //=================================================================================//
 let status = [];
