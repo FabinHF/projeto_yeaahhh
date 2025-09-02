@@ -1,6 +1,6 @@
 /* Geral */
 html{
-    background: url(../img/coisas/uaupeiper.png) center center / cover no-repeat fixed;
+    background-image: url(../img/coisas/uaupeiper.png);
     background-repeat: no-repeat;
     background-size:100%;
     background-position: fixed;
@@ -128,9 +128,12 @@ html{
     text-align: center;
 }
 
-.ibageTorre{
-    width: 7em;
-    background-color: #dde0e0;
-    border: 2px solid black;
-    border-radius: 4px;
+a{
+ text-decoration: none;
+}
+
+#logo2{
+    margin-left: 30px;
+    align-items: center;
+    justify-content: center;
 }

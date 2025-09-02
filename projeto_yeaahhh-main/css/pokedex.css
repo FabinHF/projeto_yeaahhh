@@ -1,0 +1,77 @@
+body {
+    background: url("../img/coisas/fundo_pokedex.jpg") center center / cover no-repeat fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    padding: 2em;
+    justify-items: center;
+}
+
+.voltar {
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    border: 2px solid #555;
+    transition: 0.3s;
+}
+
+
+
+
+.coluna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8em;
+}
+
+.icone {
+    background: #dde0e0;
+    padding: 5px;
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #555;
+    transition: transform 0.3s;
+}
+
+.icone:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.tutos{
+    margin-left: 4em;
+}
+
+.butao{
+    background: transparent;
+    padding-top: 10px;
+    transition: 0.4s;
+    border: none;
+}
+
+.butao:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.icone2{
+    margin-top: 20px;
+    padding: 5px;
+    width: 100px;
+    height: auto;   
+    transition: transform 0.3s;
+}
+
+
+#pokedex_nome{
+    z-index:2;
+    text-align: center;
+}

@@ -34,18 +34,27 @@ function tutorial(){
 function escolher(botao){
     if(botao.id == "bulb"){
         caminho = bulbassauro;
+        caminho_nome = caminho_bulbassauro;
         escolha = in_bulb;
-        nome_ali = "Bulbassauro"
+        escolha_nome = evolucao_bulbassauro;
+        tipos_adv = tip_bulb;
+
         nome_arq = "bulbassaur"
     }else if(botao.id == "char"){
         caminho = charmander;
+        caminho_nome = caminho_charmander;
         escolha = in_char;
-        nome_ali = "Charmander"
+        escolha_nome = evolucao_charmander;
+        tipos_adv = tip_char;
+
         nome_arq = "charmander"
     }else{
         caminho = squirtle;
+        caminho_nome = caminho_squirtle;
         escolha = in_squir;
-        nome_ali = "Squirtle"
+        escolha_nome = evolucao_squirtle
+        tipos_adv = tip_squir;
+
         nome_arq = "squritle"
     };
     for(let i=0; i<4; i++){
@@ -58,7 +67,7 @@ function escolher(botao){
 function montarCampo(){
     if(nivel >= 1 && nivel <=3 ){
         document.getElementById("pkm_ali").innerHTML = escolha[0];
-    }else if(nivel >3 && nivel <= 6){
+    }else if(nivel >3 && nivel <= 7){
         document.getElementById("pkm_ali").innerHTML = escolha[1];
     }else{
         document.getElementById("pkm_ali").innerHTML = escolha[2];
@@ -74,9 +83,10 @@ function montarCampo(){
 };
 
 function batalha(){
-    let text = '<img class="ibage" src="../img/pokemon/' + nome_arq +'/' + nivel +'.png">'
-    console.log(text)
-    document.getElementById("pkm_adv").innerHTML = text
+    let text = '<img class="ibage" src="../img/pokemon/' + nome_arq +'/' + (nivelTorre +1) +'.png">';
+
+    document.getElementById("pkm_adv").innerHTML = text;
+    document.getElementById("nome_adv").innerHTML = caminho_nome[nivelTorre];
 };
 
 /*Função para calcular o dano do Pokémon com base no seu estágio evolutivo*/
@@ -173,9 +183,35 @@ function defender(){
 */
 /*sla man*/
 //=================================================================================//
-let status = [];
+
+
+// Escolha e definição de caminho //
+
 let caminho = [];
+let caminho_nome = [];
 let escolha = [];
+let escolha_nome = [];
+let tipos_adv = [];
+let nome_arq;
+
+// status predefinidos //
+
+let status = [];
+let stt_bulb  = [[1,10],[3,45],[7,121]];
+let stt_char  = [[3,7],[7,30],[12,102]];
+let stt_squir  = [[2,9],[5,40],[10,113]];
+
+let stts_caminho_bulb = [[1,6],[1,7],[2,4],[4,15],[5,23],[5,30],[6,35],[10,74],[12,90]];
+let stts_caminho_char = [[1,7],[2,4],[1,10],[3,20],[4,45],[4,50],[5,42],[9,82],[10,115]];
+let stts_caminho_squir = [[2,5],[1,7],[2,7],[3,17],[4,35],[5,35],[5,40],[10,80],[11,100]];
+
+// Status caminho //
+
+let hp = 0;
+let nivel = 1;
+let nome_ali = "";
+let nivelTorre = 0;
+
 
 // Caminho imagem //
 
@@ -205,36 +241,34 @@ let stt_char  = [[3,6],[7,30],[12,80]];
 let stt_squir  = [[2,8],[5,40],[10,100]];
 
 
+
 // Caminho nome //
 
 const bulbassauro_caminho = [0,1,2,3,4,5,6,7,8];
 const charmander_caminho = [0,1,2,3,4,5,6,7,8];
 const Squirtle_caminho = [0,1,2,3,4,5,6,7,8];
 
+// Nomes pokémon //
+
 
 
 
 /* Linha evolutiva dos iniciais ----------------------------------------
 
+
 const evolucao_bulbassauro = ["Bulbasaur", "Ivysaur", "Venusaur"];
-const pkm_img_bulba_evolucao = ["001", "002", "003"];
-
 const evolucao_charmander = ["Charmander", "Charmeleon", "Charizard"];
-const pkm_img_charmander_evolucao = ["004", "005", "006"];
-
 const evolucao_squirtle = ["Squirtle", "Wartortle", "Blastoise"];
-const pkm_img_squirtle_evolucao = ["007", "008", "009"];
 
-/*Linha evolutiva dos iniciais ----------------------------------------
+// Nomes pokémon caminhos //
 
-/*Caminho de cada inicial ----------------------------------------
 const caminho_bulbassauro = ["Caterpie","Pidgey","Vulpix","Paras","Mankey","Growlithe","Magmar","Moltres","Mewtwo"];
-const pkm_img_bulbassauro = ["010", "016", "037", "046", "056", "058", "126", "146", "150"];
-/*-------------------------
 const caminho_charmander = ["Spearow","Sandshrew","Nidorina","Psyduck","Tentacruel","Golem","Lapras","Articuno","Mewtwo"];
-const pkm_img_charmander = ["021", "027", "030", "054", "073", "076", "131", "144", "150"];
-/*------------------------- 
 const caminho_squirtle = ["Rattata","Ekans","Pikachu","Victreebel","Voltorb","Scyther","Electabuzz","Zapdos","Mewtwo"];
-const pkm_img_squirtle = ["019", "023", "025", "071", "100", "123", "125", "145", "150"];
 
-Caminho de cada inicial ---------------------------------------- */
+// tipagem caminhos //
+
+const tip_bulb = [["inseto"],["normal","voador"],["fogo"],["inseto","venenoso"],["lutador"],["fogo"],["fogo"],["fogo","voador"],["psiquico"]];
+const tip_char = [["normal","voador"],["terra"],["venenoso"],["agua"],["agua","venenoso"],["terra","pedra"],["agua","gelo"],["gelo","voador"],["psiquico"]];
+const tip_squir = [["normal"],["venenoso"],["eletrico"],["planta","venenoso"],["eletrico"],["inseto","voador"],["eletrico"],["eletrico","voador"],["psiquico"]];
+
