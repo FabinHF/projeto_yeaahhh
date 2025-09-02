@@ -1,25 +1,35 @@
+// Função para mostrar e esconder o painel de tutorial
 function tutorial(){
-    document.getElementById("texto").innerHTML = (`
-        PokeTower é uma fangame da franquia Pokémon com toques e elementos da franquia de Mortal Kombat.<br><br>
-        O objetivo do jogo é você conseguir levar o seu pokémon inicial até o topo da torre superando seus desafios.<br><br>
+    const painel = document.getElementById("tutorialPanel");
+    const botao = document.getElementById("tuto");
+    if (painel.style.display === "none" || painel.style.display === "") {
+        // Aqui dá a posição dinâmica ao lado do botão
+        const rect = botao.getBoundingClientRect();
+        painel.style.top = (window.scrollY + rect.bottom + 9) + "px";
+        painel.style.left = (window.scrollX + rect.left - 40) + "px";
 
-        
-        Você se vê diante de um grande desafio<br>
-        Você é movido por fome de luta e poder.<br>
-        Suba na torre e conquiste cada andar!<br>
-        Siga sem medo pelo caminho do mestre pokémon!<br><br>
-        
-
-        O jogo conta com mecânicas de evolução e combate por turnos como;<br><br>
-        - <span style="color:tomato;">Ataque</span> (Você dá um dano básico em seu oponente)<br><br>
-        - <span style="color:cyan;">Defesa</span> (Você reduz o dano do próximo ataque do oponente)<br><br>
-        - <span style="color:lightgreen;">Carregar</span> (Você aumenta o dano do seu próximo ataque, você pode acumular até 3 cargas mas lembre-se que você ficará vulnerável!!)<br><br>
-        
-        Há também um caminho pré-definido de inimigos dependendo do pokémon inicial escolhido. Seu inicial enfrentará seus adversários sozinhos 
-        mas ele tem um enorme potencial de crescimento e evolução.<br>
-        Não se esqueça também de que o próximo pokémon de cada andar sempre será mais forte!!<br>
-        Ao chegar no final da torre, você se deparará com o PODEROSO <span style="background-color: black; color:white;">!@#$%!</span> o Chefe FINAL da torre!! Boa sorte.<br>`);
+        document.getElementById("tutorialContent").innerHTML = (`
+            PokeTower é uma fangame da franquia Pokémon com toques e elementos da franquia de Mortal Kombat.<br><br>
+            O objetivo do jogo é você conseguir levar o seu pokémon inicial até o topo da torre superando seus desafios.<br><br>
+            Você se vê diante de um grande desafio<br>
+            Você é movido por fome de luta e poder.<br>
+            Suba na torre e conquiste cada andar!<br>
+            Siga sem medo pelo caminho do mestre pokémon!<br><br>
+            O jogo conta com mecânicas de evolução e combate por turnos como;<br><br>
+            - <span style="color:tomato;">Ataque</span> (Você dá um dano básico em seu oponente)<br><br>
+            - <span style="color:cyan;">Defesa</span> (Você reduz o dano do próximo ataque do oponente)<br><br>
+            - <span style="color:lightgreen;">Carregar</span> (Você aumenta o dano do seu próximo ataque, você pode acumular até 3 cargas mas lembre-se que você ficará vulnerável!!)<br><br>
+            Há também um caminho pré-definido de inimigos dependendo do pokémon inicial escolhido. Seu inicial enfrentará seus adversários sozinhos 
+            mas ele tem um enorme potencial de crescimento e evolução.<br>
+            Não se esqueça também de que o próximo pokémon de cada andar sempre será mais forte!!<br>
+            Ao chegar no final da torre, você se deparará com o PODEROSO <span style="background-color: black; color:white;">!@#$%!</span> o Chefe FINAL da torre!! Boa sorte.<br>
+        `);
+        painel.style.display = "block";
+    } else {
+        painel.style.display = "none";
+    };
 };
+
 
 function escolher(botao){
     if(botao.id == "bulb"){
@@ -79,6 +89,99 @@ function batalha(){
     document.getElementById("nome_adv").innerHTML = caminho_nome[nivelTorre];
 };
 
+/*Função para calcular o dano do Pokémon com base no seu estágio evolutivo*/
+
+/*function atacar(){
+
+    if (opcao.id == "atacar"){
+        let dano = 0;
+
+    let chance_acerto = Math.random(); 
+    if (chance_acerto < 0.6) {
+
+        if (escolha === in_bulb) {
+
+        if (nivel < 4) {
+            dano = stt_bulb[0][0];
+        } else if (nivel >= 4 && nivel < 8) {
+            dano = stt_bulb[1][0];
+        } else {
+            dano = stt_bulb[2][0];
+        }
+
+    } else if (escolha === in_char) {
+
+        if (nivel < 4) {
+            dano = stt_char[0][0];
+        } else if (nivel >= 4 && nivel < 8) {
+            dano = stt_char[1][0];
+        } else {
+            dano = stt_char[2][0];
+        }
+
+    } else if (escolha === in_squir) {
+
+        if (nivel < 4) {
+            dano = stt_squir[0][0];
+        } else if (nivel >= 4 && nivel < 8) {
+            dano = stt_squir[1][0];
+        } else {
+            dano = stt_squir[2][0];
+        }
+    }
+  }
+}
+
+
+    
+
+
+
+    
+
+//=================================================================================//
+
+function carregar_ataque() {
+
+    let atq_carregado = 0;
+
+    if (escolha === in_bulb) {
+        if (nivel < 4) {
+            dano = stt_bulb[0][0];
+        } else if (nivel >= 4 && nivel < 8) {
+            dano = stt_bulb[1][0];
+        } else {
+            dano = stt_bulb[2][0];
+        }
+
+    } else if (escolha === in_char) {
+        if (nivel < 4) {
+            dano = stt_char[0][0];
+        } else if (nivel >= 4 && nivel < 8) {
+            dano = stt_char[1][0];
+        } else {
+            dano = stt_char[2][0];
+        }
+
+    } else if (escolha === in_squir) {
+        if (nivel < 4) {
+            dano = stt_squir[0][0];
+        } else if (nivel >= 4 && nivel < 8) {
+            dano = stt_squir[1][0];
+        } else {
+            dano = stt_squir[2][0];
+        }
+    }
+
+    return dano;
+}
+
+function defender(){
+    let defesa = 0;
+}
+
+*/
+/*sla man*/
 //=================================================================================//
 
 
@@ -122,6 +225,23 @@ const in_bulb = ['<img class="ibage" src="../img/pokemon/bulbassaur/bulbassauro.
 const in_char = ['<img class="ibage" src="../img/pokemon/charmander/charmander.png">','<img class="ibage" src="../img/pokemon/charmander/charmeleon.png">','<img class="ibage" src="../img/pokemon/charmander/charizard.png">'];
 const in_squir = ['<img class="ibage" src="../img/pokemon/squritle/squirtle.png">','<img class="ibage" src="../img/pokemon/squritle/wartortle.png">','<img class="ibage" src="../img/pokemon/squritle/blastoise.png">'];
 
+// Status caminho //
+
+let nivelTorre = 0;
+let nome_ali = "";
+let hp = 0;
+let tipo = "";
+let fraqueza = "";
+let nivel = 1;
+
+
+let nome_arq
+let stt_bulb  = [[1,10],[3,45],[7,120]];
+let stt_char  = [[3,6],[7,30],[12,80]];
+let stt_squir  = [[2,8],[5,40],[10,100]];
+
+
+
 // Caminho nome //
 
 const bulbassauro_caminho = [0,1,2,3,4,5,6,7,8];
@@ -129,6 +249,11 @@ const charmander_caminho = [0,1,2,3,4,5,6,7,8];
 const Squirtle_caminho = [0,1,2,3,4,5,6,7,8];
 
 // Nomes pokémon //
+
+
+
+
+/* Linha evolutiva dos iniciais ----------------------------------------
 
 
 const evolucao_bulbassauro = ["Bulbasaur", "Ivysaur", "Venusaur"];
@@ -146,3 +271,4 @@ const caminho_squirtle = ["Rattata","Ekans","Pikachu","Victreebel","Voltorb","Sc
 const tip_bulb = [["inseto"],["normal","voador"],["fogo"],["inseto","venenoso"],["lutador"],["fogo"],["fogo"],["fogo","voador"],["psiquico"]];
 const tip_char = [["normal","voador"],["terra"],["venenoso"],["agua"],["agua","venenoso"],["terra","pedra"],["agua","gelo"],["gelo","voador"],["psiquico"]];
 const tip_squir = [["normal"],["venenoso"],["eletrico"],["planta","venenoso"],["eletrico"],["inseto","voador"],["eletrico"],["eletrico","voador"],["psiquico"]];
+
