@@ -1,3 +1,4 @@
+// Função para mostrar e esconder o painel de tutorial
 function tutorial(){
     const painel = document.getElementById("tutorialPanel");
     const botao = document.getElementById("tuto");
@@ -78,6 +79,99 @@ function batalha(){
     document.getElementById("pkm_adv").innerHTML = text
 };
 
+/*Função para calcular o dano do Pokémon com base no seu estágio evolutivo*/
+
+function atacar(){
+
+    if (opcao.id == "atacar"){
+        let dano = 0;
+
+    let chance_acerto = Math.random(); 
+    if (chance_acerto < 0.6) {
+
+        if (escolha === in_bulb) {
+
+        if (nivel < 4) {
+            dano = stt_bulb[0][0];
+        } else if (nivel >= 4 && nivel < 8) {
+            dano = stt_bulb[1][0];
+        } else {
+            dano = stt_bulb[2][0];
+        }
+
+    } else if (escolha === in_char) {
+
+        if (nivel < 4) {
+            dano = stt_char[0][0];
+        } else if (nivel >= 4 && nivel < 8) {
+            dano = stt_char[1][0];
+        } else {
+            dano = stt_char[2][0];
+        }
+
+    } else if (escolha === in_squir) {
+
+        if (nivel < 4) {
+            dano = stt_squir[0][0];
+        } else if (nivel >= 4 && nivel < 8) {
+            dano = stt_squir[1][0];
+        } else {
+            dano = stt_squir[2][0];
+        }
+    }
+  }
+}}
+
+
+    
+
+
+
+    
+
+//=================================================================================//
+
+function carregar_ataque() {
+
+    let atq_carregado = 0;
+
+    if (escolha === in_bulb) {
+        if (nivel < 4) {
+            dano = stt_bulb[0][0];
+        } else if (nivel >= 4 && nivel < 8) {
+            dano = stt_bulb[1][0];
+        } else {
+            dano = stt_bulb[2][0];
+        }
+
+    } else if (escolha === in_char) {
+        if (nivel < 4) {
+            dano = stt_char[0][0];
+        } else if (nivel >= 4 && nivel < 8) {
+            dano = stt_char[1][0];
+        } else {
+            dano = stt_char[2][0];
+        }
+
+    } else if (escolha === in_squir) {
+        if (nivel < 4) {
+            dano = stt_squir[0][0];
+        } else if (nivel >= 4 && nivel < 8) {
+            dano = stt_squir[1][0];
+        } else {
+            dano = stt_squir[2][0];
+        }
+    }
+
+    return dano;
+}
+
+function defender(){
+    let defesa = 0;
+}
+
+
+
 //=================================================================================//
 let status = [];
 let caminho = [];
@@ -116,6 +210,7 @@ let stt_squir  = [[2,8],[5,40],[10,100]];
 const bulbassauro_caminho = [0,1,2,3,4,5,6,7,8];
 const charmander_caminho = [0,1,2,3,4,5,6,7,8];
 const Squirtle_caminho = [0,1,2,3,4,5,6,7,8];
+
 
 
 
