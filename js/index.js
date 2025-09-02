@@ -81,6 +81,7 @@ function batalha(){
 
 //=================================================================================//
 
+
 // Escolha e definição de caminho //
 
 let caminho = [];
@@ -108,6 +109,7 @@ let nivel = 1;
 let nome_ali = "";
 let nivelTorre = 0;
 
+
 // Caminho imagem //
 
 const bulbassauro = ['<img class="ibageTorre" src="../img/pokemon/bulbassaur/1.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/2.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/3.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/4.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/5.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/6.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/7.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/8.png">','<img class="ibageTorre" src="../img/pokemon/bulbassaur/9.png">'];
@@ -127,6 +129,7 @@ const charmander_caminho = [0,1,2,3,4,5,6,7,8];
 const Squirtle_caminho = [0,1,2,3,4,5,6,7,8];
 
 // Nomes pokémon //
+
 
 const evolucao_bulbassauro = ["Bulbasaur", "Ivysaur", "Venusaur"];
 const evolucao_charmander = ["Charmander", "Charmeleon", "Charizard"];
