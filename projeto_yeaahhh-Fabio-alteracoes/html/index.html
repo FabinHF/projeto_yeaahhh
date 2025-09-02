@@ -22,7 +22,7 @@
                     <button class="butao tutos">
                         <a href="pokedex.html"><img src="../img/coisas/pkdx-removebg-preview.png" class="icone" id="pkdex"></a>
                     </button>
-
+                    
                     <!-- Tutorial -->
                     <button class="butao tutos">   
                         <img src="../img/coisas/interrogacao.png" class="icone" id="tuto" onclick="tutorial()">
@@ -94,6 +94,10 @@
             <div id="10"></div>
         </div>
     </div>
-    
+
+    <!-- Painel flutuante do Tutorial -->
+    <div id="tutorialPanel" style="display:none; position:absolute; top:120px; left:40px; background:#fff; border:2px solid #333; border-radius:10px; box-shadow:0 4px 16px #0003; padding:24px; max-width:350px; z-index:1000;">
+        <div id="tutorialContent"></div>
+    </div>
 </body>
 </html>

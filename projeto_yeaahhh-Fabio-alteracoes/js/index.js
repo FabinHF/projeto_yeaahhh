@@ -1,25 +1,33 @@
- function tutorial(){
-    document.getElementById("texto").innerHTML = (`
-        PokeTower é uma fangame da franquia Pokémon com toques e elementos da franquia de Mortal Kombat.<br><br>
-        O objetivo do jogo é você conseguir levar o seu pokémon inicial até o topo da torre superando seus desafios.<br><br>
+function tutorial(){
+    const painel = document.getElementById("tutorialPanel");
+    const botao = document.getElementById("tuto");
+    if (painel.style.display === "none" || painel.style.display === "") {
+        // Aqui dá a posição dinâmica ao lado do botão
+        const rect = botao.getBoundingClientRect();
+        painel.style.top = (window.scrollY + rect.bottom + 9) + "px";
+        painel.style.left = (window.scrollX + rect.left - 40) + "px";
 
-        
-        Você se vê diante de um grande desafio<br>
-        Você é movido por fome de luta e poder.<br>
-        Suba na torre e conquiste cada andar!<br>
-        Siga sem medo pelo caminho do mestre pokémon!<br><br>
-        
-
-        O jogo conta com mecânicas de evolução e combate por turnos como;<br><br>
-        - <span style="color:tomato;">Ataque</span> (Você dá um dano básico em seu oponente)<br><br>
-        - <span style="color:cyan;">Defesa</span> (Você reduz o dano do próximo ataque do oponente)<br><br>
-        - <span style="color:lightgreen;">Carregar</span> (Você aumenta o dano do seu próximo ataque, você pode acumular até 3 cargas mas lembre-se que você ficará vulnerável!!)<br><br>
-        
-        Há também um caminho pré-definido de inimigos dependendo do pokémon inicial escolhido. Seu inicial enfrentará seus adversários sozinhos 
-        mas ele tem um enorme potencial de crescimento e evolução.<br>
-        Não se esqueça também de que o próximo pokémon de cada andar sempre será mais forte!!<br>
-        Ao chegar no final da torre, você se deparará com o PODEROSO <span style="background-color: black; color:white;">!@#$%!</span> o Chefe FINAL da torre!! Boa sorte.<br>`);
-};
+        document.getElementById("tutorialContent").innerHTML = (`
+            PokeTower é uma fangame da franquia Pokémon com toques e elementos da franquia de Mortal Kombat.<br><br>
+            O objetivo do jogo é você conseguir levar o seu pokémon inicial até o topo da torre superando seus desafios.<br><br>
+            Você se vê diante de um grande desafio<br>
+            Você é movido por fome de luta e poder.<br>
+            Suba na torre e conquiste cada andar!<br>
+            Siga sem medo pelo caminho do mestre pokémon!<br><br>
+            O jogo conta com mecânicas de evolução e combate por turnos como;<br><br>
+            - <span style="color:tomato;">Ataque</span> (Você dá um dano básico em seu oponente)<br><br>
+            - <span style="color:cyan;">Defesa</span> (Você reduz o dano do próximo ataque do oponente)<br><br>
+            - <span style="color:lightgreen;">Carregar</span> (Você aumenta o dano do seu próximo ataque, você pode acumular até 3 cargas mas lembre-se que você ficará vulnerável!!)<br><br>
+            Há também um caminho pré-definido de inimigos dependendo do pokémon inicial escolhido. Seu inicial enfrentará seus adversários sozinhos 
+            mas ele tem um enorme potencial de crescimento e evolução.<br>
+            Não se esqueça também de que o próximo pokémon de cada andar sempre será mais forte!!<br>
+            Ao chegar no final da torre, você se deparará com o PODEROSO <span style="background-color: black; color:white;">!@#$%!</span> o Chefe FINAL da torre!! Boa sorte.<br>
+        `);
+        painel.style.display = "block";
+    } else {
+        painel.style.display = "none";
+    }
+}
 
 function escolher(botao){
     if(botao.id == "bulb"){
@@ -88,10 +96,11 @@ let escolha_nome = [];
 
 // status predefinidos //
 
+
 let nome_arq
-let stt_bulb  = [];
-let stt_char  = [];
-let stt_squir  = [];
+let stt_bulb  = [[1,10],[5,45],[7,120]];
+let stt_char  = [[3,6],[7,35],[12,90]];
+let stt_squir  = [[2,8],[6,40],[10,105]];
 
 // Status caminho //
 
@@ -132,4 +141,6 @@ const evolucao_squirtle = ["Squirtle", "Wartortle", "Blastoise"];
 const caminho_bulbassauro = ["Caterpie","Pidgey","Vulpix","Paras","Mankey","Growlithe","Magmar","Moltres","Mewtwo"];
 const caminho_charmander = ["Spearow","Sandshrew","Nidorina","Psyduck","Tentacruel","Golem","Lapras","Articuno","Mewtwo"];
 const caminho_squirtle = ["Rattata","Ekans","Pikachu","Victreebel","Voltorb","Scyther","Electabuzz","Zapdos","Mewtwo"];
+
+
 

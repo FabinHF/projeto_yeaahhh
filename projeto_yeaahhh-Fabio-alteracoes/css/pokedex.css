@@ -12,6 +12,18 @@ body {
     justify-items: center;
 }
 
+.voltar {
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    border: 2px solid #555;
+    transition: 0.3s;
+}
+
+
+
+
 .coluna {
     display: flex;
     flex-direction: column;
@@ -20,6 +32,7 @@ body {
 }
 
 .icone {
+    background: #dde0e0;
     padding: 5px;
     width: 100px;
     height: auto;
@@ -31,4 +44,34 @@ body {
 .icone:hover {
     transform: scale(1.2);
     cursor: pointer;
+}
+
+.tutos{
+    margin-left: 4em;
+}
+
+.butao{
+    background: transparent;
+    padding-top: 10px;
+    transition: 0.4s;
+    border: none;
+}
+
+.butao:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.icone2{
+    margin-top: 20px;
+    padding: 5px;
+    width: 100px;
+    height: auto;   
+    transition: transform 0.3s;
+}
+
+
+#pokedex_nome{
+    z-index:2;
+    text-align: center;
 }
